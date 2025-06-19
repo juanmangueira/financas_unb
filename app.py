@@ -8,7 +8,7 @@ st.set_page_config(
     # initial_sidebar_state="expanded"
 )
 
-def main():
+def interface():
     if 'cenarios' not in st.session_state:
         st.session_state['cenarios'] = pd.DataFrame([
             {'Ativo': 'AçãoA', 'Probabilidade': 0.5, 'Retorno': 0.1},
@@ -79,7 +79,9 @@ def main():
         }
     )
     st.session_state['cenarios'] = cenarios_editado
-    st.write(st.session_state)
+def main():
+    interface()
+    # st.write(st.session_state)
 
 if __name__ == "__main__":
     main()
